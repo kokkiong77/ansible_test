@@ -12,8 +12,11 @@
     apt:
       name: apache2
       state: latest
+    when: ansible_distribution_version == "20.04" 
 
   - name: add php support for apache
     apt:
       name: libapache2-mod-php
       state: latest
+    when: ansible_distribution_version == "24.04"
+
